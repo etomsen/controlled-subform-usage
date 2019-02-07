@@ -1,0 +1,7 @@
+<form [formGroup]="form" class="app-sub-form-component"
+    [style.borderColor]="form.valid ? 'palegreen' : 'palevioletred'">
+  <app-passenger-list [control]="form.get('data')"></app-passenger-list>
+  <div><b>APP</b></div>
+  <div>form.value = {{form.value | json}}</div>
+  <div>form.valid = {{form.valid}}</div>
+</form>

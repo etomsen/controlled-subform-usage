@@ -1,0 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.app-sub-form-component {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid grey;
+}
+
+.mat-form-field-container {
+  display: flex;
+  flex-direction: column;
+}

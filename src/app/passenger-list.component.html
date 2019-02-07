@@ -1,0 +1,15 @@
+<div [formGroup]="subForm" class="app-sub-form-component"
+    [style.borderColor]="isSubFormValid ? 'palegreen' : 'palevioletred'">
+  <div formArrayName="passengers">
+    <app-personal-details
+      *ngFor="let ctrl of getPassengersArray().controls; let i = index;"
+      [formGroupName]="i"
+      [control]="ctrl">
+    </app-personal-details>
+  </div>
+  <div><b>PAX-LIST</b></div>
+  <div>subForm.value = {{subForm.value | json}}</div>
+  <div>subForm.valid = {{subForm.valid}}</div>
+  <div>control.value = {{control.value | json}}</div>
+  <div>control.valid = {{control.valid}}</div>
+</div>

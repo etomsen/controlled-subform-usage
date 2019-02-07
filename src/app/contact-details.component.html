@@ -1,0 +1,45 @@
+<div [formGroup]="subForm" class="app-sub-form-component"
+    [style.borderColor]="isSubFormValid ? 'palegreen' : 'palevioletred'">
+  <div class="mat-form-field-container">
+    <mat-form-field>
+      <input matInput
+      formControlName="emailAddress"
+      placeholder="EMAil"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false">
+      <mat-error *ngIf="getEmailAddressControl().invalid && (getEmailAddressControl().dirty || getEmailAddressControl().touched)">
+        <span *ngIf="getEmailAddressControl().errors['required']; else otherEmailError">
+          EName is required.
+        </span>
+        <ng-template #otherEmailError>
+          Email is invalid
+        </ng-template>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mat-form-field-container">
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Phone"
+      formControlName="phoneNumber"
+      autocomplete="off">
+      <mat-error *ngIf="getPhoneNumberControl().invalid && (getPhoneNumberControl().dirty || getPhoneNumberControl().touched)">
+        <span *ngIf="getPhoneNumberControl().errors['required']; else otherPhoneError">
+          Phone is required.
+        </span>
+        <ng-template #otherPhoneError>
+          Phone is invalid
+        </ng-template>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div><b>CONTACT-DETAILS</b></div>
+  <div>subForm.value = {{subForm.value | json}}</div>
+  <div>subForm.valid = {{subForm.valid}}</div>
+  <div>subForm.pristine = {{subForm.pristine}}</div>
+  <div>control.value = {{control.value | json}}</div>
+  <div>control.valid = {{control.valid}}</div>
+  <div>control.pristine = {{control.pristine}}</div>
+</div>
